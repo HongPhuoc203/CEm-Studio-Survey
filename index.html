@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Portrait Studio - Khảo sát Concept Chụp Ảnh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Landing Page -->
+    <section id="landing" class="landing-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="studio-name">Cem Studio</h1>
+            <p class="tagline">Khám phá concept chụp ảnh sinh ra dành riêng cho bạn</p>
+            <button class="cta-button" onclick="startQuiz()">Bắt đầu khảo sát</button>
+        </div>
+        
+        <div class="about-section">
+            <div class="container">
+                <p class="about-text">
+                    CEm  Studio mang đến trải nghiệm chụp ảnh độc đáo, được cá nhân hóa dựa trên năng lượng và phong cách riêng của bạn. 
+                    Thông qua khảo sát ngắn gọn, chúng tôi sẽ đề xuất concept chụp ảnh phù hợp nhất với tính cách và gu thẩm mỹ của bạn.
+                </p>
+                
+                <div class="how-it-works">
+                    <h2>Cách thức hoạt động</h2>
+                    <div class="steps">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <h3>Khảo sát</h3>
+                            <p>Trả lời 3 câu hỏi ngắn về phong cách và sở thích của bạn</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <h3>Kết quả concept</h3>
+                            <p>Nhận đề xuất concept chụp ảnh được cá nhân hóa</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <h3>Đặt lịch chụp</h3>
+                            <p>Liên hệ studio để đặt lịch và tư vấn chi tiết</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section hidden">
+        <div class="quiz-container">
+            <!-- Progress Indicator -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentStep">1</span> / 3
+            </div>
+
+            <!-- Step 1: Choose Element -->
+            <div id="step1" class="quiz-step">
+                <h2 class="step-title">Bước 1: Bạn cảm thấy mình thuộc về năng lượng nào?</h2>
+                <div class="choices-grid">
+                    <div class="choice-card" onclick="selectElement('kim')">
+                        <img class="choice-thumb" src="Images/Kim/kim 1.1.jpg" alt="Hình minh họa element Kim">
+                        <div class="element-icon kim-icon">⚪</div>
+                        <h3>Kim (Metal)</h3>
+                        <p>Thanh lịch, chỉn chu, tinh tế và sang trọng</p>
+                    </div>
+                    <div class="choice-card" onclick="selectElement('moc')">
+                        <img class="choice-thumb" src="Images/Mộc/mộc 1.1.jpg" alt="Hình minh họa element Mộc">
+                        <div class="element-icon moc-icon">🌳</div>
+                        <h3>Mộc (Wood)</h3>
+                        <p>Tự nhiên, gần gũi, tươi mới và tràn đầy sức sống</p>
+                    </div>
+                    <div class="choice-card" onclick="selectElement('thuy')">
+                        <img class="choice-thumb" src="Images/Thuỷ/thuỷ 1.1.jpg" alt="Hình minh họa element Thủy">
+                        <div class="element-icon thuy-icon">💧</div>
+                        <h3>Thủy (Water)</h3>
+                        <p>Mềm mại, linh hoạt, sâu sắc và mơ màng</p>
+                    </div>
+                    <div class="choice-card" onclick="selectElement('hoa')">
+                        <img class="choice-thumb" src="Images/Hoả/hoả 1.1.jpg" alt="Hình minh họa element Hỏa">
+                        <div class="element-icon hoa-icon">🔥</div>
+                        <h3>Hỏa (Fire)</h3>
+                        <p>Nhiệt huyết, năng động, quyến rũ và đầy cảm xúc</p>
+                    </div>
+                    <div class="choice-card" onclick="selectElement('tho')">
+                        <img class="choice-thumb" src="Images/Thổ/thổ 1.1.jpg" alt="Hình minh họa element Thổ">
+                        <div class="element-icon tho-icon">🌍</div>
+                        <h3>Thổ (Earth)</h3>
+                        <p>Ổn định, chắc chắn, ấm áp và đáng tin cậy</p>
+                    </div>
+                </div>
+                <p class="quiz-note">*Chỉ mất khoảng 1–2 phút để hoàn thành khảo sát*</p>
+            </div>
+
+            <!-- Step 2: Style/Location based on element -->
+            <div id="step2" class="quiz-step hidden">
+                <button class="back-button" onclick="goBack(1)">← Quay lại</button>
+                <h2 class="step-title" id="step2Title"></h2>
+                
+                <div class="choices-grid" id="step2Choices"></div>
+                <p class="quiz-note">*Chỉ mất khoảng 1–2 phút để hoàn thành khảo sát*</p>
+            </div>
+
+            <!-- Step 3: Mood/Lighting/Outfit -->
+            <div id="step3" class="quiz-step hidden">
+                <button class="back-button" onclick="goBack(2)">← Quay lại</button>
+                <h2 class="step-title" id="step3Title"></h2>
+                
+                <div class="choices-grid" id="step3Choices"></div>
+                <p class="quiz-note">*Chỉ mất khoảng 1–2 phút để hoàn thành khảo sát*</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Result Page -->
+    <section id="result" class="result-section hidden">
+        <div class="result-container">
+            <h1 class="result-title" id="resultTitle"></h1>
+            <p class="result-description" id="resultDescription"></p>
+            
+            <div class="result-gallery">
+                <!-- <h2>Hình ảnh tham khảo đã chọn</h2> -->
+                <div class="result-gallery-grid" id="resultGallery"></div>
+            </div>
+
+            <div class="result-details">
+                <h2>Định hướng hình ảnh đề xuất</h2>
+                <div class="detail-item">
+                    <h3>✨ Phong cách gợi ý</h3>
+                    <p id="resultStyle"></p>
+                </div>
+                <div class="detail-item">
+                    <h3>🌈 Tông cảm xúc</h3>
+                    <p id="resultMood"></p>
+                </div>
+                <div class="detail-item">
+                    <h3>🎨 Gam màu chủ đạo</h3>
+                    <p id="resultColors"></p>
+                </div>
+                <div class="detail-item">
+                    <h3>💡 Kiểu ánh sáng</h3>
+                    <p id="resultLighting"></p>
+                </div>
+                <div class="detail-item">
+                    <h3>👗 Gợi ý trang phục</h3>
+                    <p id="resultOutfit"></p>
+                </div>
+                <div class="detail-item">
+                    <h3>💄 Gợi ý make up & tóc</h3>
+                    <p id="resultMakeup"></p>
+                </div>
+                <div class="detail-item">
+                    <h3>📸 Gợi ý pose / cảm xúc</h3>
+                    <p id="resultPose"></p>
+                </div>
+            </div>
+
+            
+
+            <div class="cta-section">
+                <button class="save-button" onclick="saveResult()">Lưu kết quả</button>
+                <button class="book-button" onclick="bookSession()">Đặt lịch chụp với studio</button>
+                <p class="cta-note">Điền thông tin của bạn, studio sẽ tư vấn concept và báo giá chi tiết.</p>
+                
+                <div class="social-links">
+                    <a class="social-icon" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 11.99 2 6.47 2 2 6.5 2 12.06c0 5 3.66 9.14 8.44 9.94v-7.03H8.08v-2.91h2.36V9.9c0-2.35 1.4-3.65 3.55-3.65 1.03 0 2.11.18 2.11.18v2.33h-1.19c-1.17 0-1.53.73-1.53 1.48v1.78h2.6l-.41 2.91h-2.19V22c4.78-.8 8.44-4.94 8.44-9.94Z"></path></svg>
+                    </a>
+                    <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.25-3.75a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"></path></svg>
+                    </a>
+                    <a class="social-icon" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 4.06c.5 1.65 1.84 2.93 3.5 3.23v2.37a6.35 6.35 0 0 1-3.68-1.24v5.33a4.86 4.86 0 1 1-4.7-4.85v2.36a2.5 2.5 0 1 0 2.02 2.45V4h2.86Z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <button class="restart-button" onclick="restartQuiz()">Làm lại khảo sát</button>
+        </div>
+    </section>
+
+    <!-- Contact Form Modal -->
+    <div id="contactModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Đặt lịch chụp với studio</h2>
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <input type="text" placeholder="Họ và tên" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Số điện thoại" required>
+                <textarea placeholder="Ghi chú (tùy chọn)" rows="4"></textarea>
+                <button type="submit">Gửi yêu cầu</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
