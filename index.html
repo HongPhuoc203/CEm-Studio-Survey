@@ -9,40 +9,44 @@
 <body>
     <!-- Landing Page -->
     <section id="landing" class="landing-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="studio-name">Cem Studio</h1>
-            <p class="tagline">Khám phá concept chụp ảnh sinh ra dành riêng cho bạn</p>
-            <button class="cta-button" onclick="startQuiz()">Bắt đầu khảo sát</button>
+        <div class="landing-text">
+            <div class="hero-kicker">Khai sắc ngũ hành</div>
+            <h1 class="studio-name">Khai sắc ngũ hành,<br>đón vận năm mới</h1>
+            <p class="tagline">Chọn concept hợp mệnh của bạn để khai mở một năm Bính Ngọ rực rỡ, hanh thông!</p>
+            
+            <div class="cta-row">
+                <button class="cta-button" onclick="startQuiz()">Take quiz</button>
+            </div>
+            <div class="meta-row">
+                <div class="meta-dot"></div>
+                <span>Chỉ mất ~2 phút • Nhận gợi ý concept hợp mệnh</span>
+            </div>
         </div>
-        
-        <div class="about-section">
-            <div class="container">
-                <p class="about-text">
-                    CEm  Studio mang đến trải nghiệm chụp ảnh độc đáo, được cá nhân hóa dựa trên năng lượng và phong cách riêng của bạn. 
-                    Thông qua khảo sát ngắn gọn, chúng tôi sẽ đề xuất concept chụp ảnh phù hợp nhất với tính cách và gu thẩm mỹ của bạn.
-                </p>
-                
-                <div class="how-it-works">
-                    <h2>Cách thức hoạt động</h2>
-                    <div class="steps">
-                        <div class="step-item">
-                            <div class="step-number">1</div>
-                            <h3>Khảo sát</h3>
-                            <p>Trả lời 3 câu hỏi ngắn về phong cách và sở thích của bạn</p>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">2</div>
-                            <h3>Kết quả concept</h3>
-                            <p>Nhận đề xuất concept chụp ảnh được cá nhân hóa</p>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">3</div>
-                            <h3>Đặt lịch chụp</h3>
-                            <p>Liên hệ studio để đặt lịch và tư vấn chi tiết</p>
-                        </div>
-                    </div>
-                </div>
+        <div class="hero-image-wrap">
+            <img class="hero-image" src="Images/avatar.jpg" alt="Aura Portrait">
+            <div class="hero-gradient"></div>
+        </div>
+    </section>
+
+    <!-- Pre-Survey Info -->
+    <section id="preSurvey" class="pre-survey-section hidden">
+        <div class="pre-survey-container">
+            <h2 class="pre-title">Nhập thông tin trước khi bắt đầu</h2>
+            <p class="pre-desc">Vui lòng để lại tên và số điện thoại để studio có thể gửi kết quả và tư vấn chi tiết cho bạn.</p>
+            
+            <div class="pre-form">
+                <label>
+                    Họ và tên
+                    <input type="text" id="preName" placeholder="Nguyễn Văn A" required>
+                </label>
+                <label>
+                    Số điện thoại
+                    <input type="tel" id="prePhone" placeholder="0912 345 678" required>
+                </label>
+                <p class="pre-hint">*Thông tin chỉ dùng để liên hệ tư vấn, không chia sẻ ra bên ngoài.</p>
+                <button class="cta-button" onclick="submitPreSurvey()">Tiếp tục khảo sát</button>
+                <button class="link-button" onclick="backToLanding()">← Quay lại trang chính</button>
+                <p id="preError" class="pre-error hidden">Vui lòng nhập đầy đủ tên và số điện thoại hợp lệ.</p>
             </div>
         </div>
     </section>
@@ -60,7 +64,7 @@
 
             <!-- Step 1: Choose Element -->
             <div id="step1" class="quiz-step">
-                <h2 class="step-title">Bước 1: Bạn cảm thấy mình thuộc về năng lượng nào?</h2>
+                <h2 class="step-title">Để vũ trụ kết nối đúng tần số, bạn có nhớ mình thuộc mệnh nào trong Ngũ Hành không?</h2>
                 <div class="choices-grid">
                     <div class="choice-card" onclick="selectElement('kim')">
                         <img class="choice-thumb" src="Images/Kim/kim 1.1.jpg" alt="Hình minh họa element Kim">
@@ -167,13 +171,13 @@
                 <p class="cta-note">Điền thông tin của bạn, studio sẽ tư vấn concept và báo giá chi tiết.</p>
                 
                 <div class="social-links">
-                    <a class="social-icon" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <a class="social-icon" href="https://www.facebook.com/Cemstudioo" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 11.99 2 6.47 2 2 6.5 2 12.06c0 5 3.66 9.14 8.44 9.94v-7.03H8.08v-2.91h2.36V9.9c0-2.35 1.4-3.65 3.55-3.65 1.03 0 2.11.18 2.11.18v2.33h-1.19c-1.17 0-1.53.73-1.53 1.48v1.78h2.6l-.41 2.91h-2.19V22c4.78-.8 8.44-4.94 8.44-9.94Z"></path></svg>
                     </a>
-                    <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <a class="social-icon" href="https://www.instagram.com/_cemstudio/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.25-3.75a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"></path></svg>
                     </a>
-                    <a class="social-icon" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <a class="social-icon" href="https://www.tiktok.com/@cem.studio?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 4.06c.5 1.65 1.84 2.93 3.5 3.23v2.37a6.35 6.35 0 0 1-3.68-1.24v5.33a4.86 4.86 0 1 1-4.7-4.85v2.36a2.5 2.5 0 1 0 2.02 2.45V4h2.86Z"></path></svg>
                     </a>
                 </div>

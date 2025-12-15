@@ -9,7 +9,9 @@ let quizState = {
     choice3: null,
     elementImage: null,
     choice2Image: null,
-    choice3Image: null
+    choice3Image: null,
+    name: '',
+    phone: ''
 };
 
 // Step 2 questions and options based on element
@@ -467,6 +469,36 @@ function renderGallery(containerId, images, elementKey) {
 // Navigation Functions
 function startQuiz() {
     document.getElementById('landing').classList.add('hidden');
+    document.getElementById('preSurvey').classList.remove('hidden');
+    // reset error message
+    const err = document.getElementById('preError');
+    if (err) err.classList.add('hidden');
+}
+
+function backToLanding() {
+    document.getElementById('preSurvey').classList.add('hidden');
+    document.getElementById('landing').classList.remove('hidden');
+}
+
+function submitPreSurvey() {
+    const nameInput = document.getElementById('preName');
+    const phoneInput = document.getElementById('prePhone');
+    const err = document.getElementById('preError');
+    
+    const name = (nameInput?.value || '').trim();
+    const phone = (phoneInput?.value || '').trim();
+    
+    if (!name || !phone) {
+        if (err) err.classList.remove('hidden');
+        return;
+    }
+    
+    quizState.name = name;
+    quizState.phone = phone;
+    if (err) err.classList.add('hidden');
+    
+    // move to quiz step 1
+    document.getElementById('preSurvey').classList.add('hidden');
     document.getElementById('quiz').classList.remove('hidden');
     updateProgress(1);
 }
@@ -593,6 +625,8 @@ function saveToGoogleSheets() {
         element: elementName,
         choice2: quizState.choice2,
         choice3: quizState.choice3,
+        name: quizState.name,
+        phone: quizState.phone,
         conceptTitle: conceptTitle
     };
     
@@ -728,7 +762,12 @@ function restartQuiz() {
     quizState = {
         element: null,
         choice2: null,
-        choice3: null
+        choice3: null,
+        elementImage: null,
+        choice2Image: null,
+        choice3Image: null,
+        name: quizState.name,
+        phone: quizState.phone
     };
     
     document.getElementById('result').classList.add('hidden');
