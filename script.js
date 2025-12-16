@@ -1,6 +1,6 @@
 // Google Sheets Web App URL - Thay đổi URL này sau khi deploy Google Apps Script
 // Lấy URL từ bước 3 trong file HUONG_DAN_GOOGLE_SHEETS.md
-const GOOGLE_SHEETS_WEB_APP_URL = 'YOUR_WEB_APP_URL_HERE'; // Ví dụ: 'https://script.google.com/macros/s/AKfycby.../exec'
+const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwLFLQTVXySc9v1WQi8PtSYFLgS3-T2QqLjR4gjFsJx4rucUlF0zraLmmj7CDlCpfQCBw/exec';
 
 // Quiz State
 let quizState = {
@@ -634,47 +634,97 @@ function updateProgress(step) {
 // Hàm gửi dữ liệu đến Google Sheets
 function saveToGoogleSheets() {
     // Kiểm tra xem đã cấu hình URL chưa
-    if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL === 'https://script.google.com/macros/s/AKfycbwLFLQTVXySc9v1WQi8PtSYFLgS3-T2QqLjR4gjFsJx4rucUlF0zraLmmj7CDlCpfQCBw/exec') {
-        console.log('Google Sheets URL chưa được cấu hình. Vui lòng xem file HUONG_DAN_GOOGLE_SHEETS.md');
+    if (!GOOGLE_SHEETS_WEB_APP_URL || 
+        GOOGLE_SHEETS_WEB_APP_URL === 'YOUR_WEB_APP_URL_HERE' ||
+        GOOGLE_SHEETS_WEB_APP_URL.includes('127.0.0.1') ||
+        !GOOGLE_SHEETS_WEB_APP_URL.startsWith('https://script.google.com')) {
+        console.log('⚠️ Google Sheets URL chưa được cấu hình đúng.');
+        console.log('URL hiện tại:', GOOGLE_SHEETS_WEB_APP_URL);
+        console.log('Vui lòng cập nhật GOOGLE_SHEETS_WEB_APP_URL trong script.js với URL từ Google Apps Script Web App');
         return;
     }
     
     const elementName = elementNames[quizState.element];
     const conceptTitle = `Concept: Nàng ${elementName} - ${quizState.choice2}`;
     
-    // Chuẩn bị dữ liệu để gửi
-    const data = {
-        element: elementName,
-        choice2: quizState.choice2,
-        choice3: quizState.choice3,
-        name: quizState.name,
-        phone: quizState.phone,
-        birthday: quizState.birthday,
-        conceptTitle: conceptTitle
-    };
+    // Google Apps Script Web App thường nhận dữ liệu dưới dạng form data hoặc query string
+    // Tạo query string từ dữ liệu
+    const params = new URLSearchParams();
+    params.append('element', elementName || '');
+    params.append('choice2', quizState.choice2 || '');
+    params.append('choice3', quizState.choice3 || '');
+    params.append('name', quizState.name || '');
+    params.append('phone', quizState.phone || '');
+    params.append('birthday', quizState.birthday || '');
+    params.append('conceptTitle', conceptTitle || '');
     
-    // Sử dụng XMLHttpRequest để gửi dữ liệu (tương thích tốt hơn với Google Apps Script)
-    try {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', GOOGLE_SHEETS_WEB_APP_URL, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200 || xhr.status === 0) {
-                    console.log('Dữ liệu đã được lưu vào Google Sheets thành công');
-                } else {
-                    console.error('Lỗi khi lưu dữ liệu:', xhr.status);
-                }
-            }
-        };
-        
-        xhr.send(JSON.stringify(data));
-        
-    } catch (error) {
-        console.error('Lỗi khi gửi dữ liệu đến Google Sheets:', error);
+    // Gửi bằng GET với query string (phương pháp phổ biến nhất cho Google Apps Script)
+    const url = `${GOOGLE_SHEETS_WEB_APP_URL}?${params.toString()}`;
+    
+    // Sử dụng fetch với no-cors mode (Google Apps Script Web App yêu cầu)
+    fetch(url, {
+        method: 'GET',
+        mode: 'no-cors',
+        cache: 'no-cache'
+    })
+    .then(() => {
+        // Với no-cors, không thể đọc response, nhưng request đã được gửi thành công
+        console.log('✅ Dữ liệu đã được gửi đến Google Sheets');
+        console.log('Dữ liệu:', {
+            element: elementName,
+            choice2: quizState.choice2,
+            choice3: quizState.choice3,
+            name: quizState.name,
+            phone: quizState.phone,
+            birthday: quizState.birthday
+        });
+    })
+    .catch((error) => {
+        console.error('❌ Lỗi khi gửi dữ liệu đến Google Sheets:', error);
+        console.log('URL đã thử:', url);
         // Không hiển thị lỗi cho người dùng để không làm gián đoạn trải nghiệm
+    });
+}
+
+function displayConceptSuggestions() {
+    const container = document.getElementById('conceptSuggestions');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    const elementName = elementNames[quizState.element];
+    const currentStyle = quizState.choice2;
+    const allStyles = step2Questions[quizState.element].options;
+    
+    // Lọc ra các phong cách khác (loại trừ phong cách hiện tại)
+    const otherStyles = allStyles.filter(style => style !== currentStyle);
+    
+    // Hiển thị tối đa 4 concept gợi ý khác
+    const suggestionsToShow = otherStyles.slice(0, 4);
+    
+    if (suggestionsToShow.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--neutral-gray); padding: 2rem;">Không có concept gợi ý khác.</p>';
+        return;
     }
+    
+    // Lấy danh sách hình ảnh từ step2
+    const step2Images = elementImages[quizState.element]?.step2 || [];
+    
+    suggestionsToShow.forEach((style, index) => {
+        // Tìm index của style trong allStyles để lấy đúng hình ảnh
+        const styleIndex = allStyles.indexOf(style);
+        const imageSrc = step2Images[styleIndex] || step2Images[0] || elementImages[quizState.element]?.step1 || '';
+        
+        const conceptCard = document.createElement('div');
+        conceptCard.className = 'concept-card';
+        conceptCard.innerHTML = `
+            <div class="concept-number">${index + 1}</div>
+            <img class="concept-image" src="${imageSrc}" alt="Concept ${style}" onerror="this.src='${elementImages[quizState.element]?.step1 || ''}'">
+            <h3>${style}</h3>
+            <p>Concept ${elementName} - ${style}</p>
+        `;
+        container.appendChild(conceptCard);
+    });
 }
 
 function showResult() {
@@ -697,30 +747,8 @@ function showResult() {
     document.getElementById('resultTitle').textContent = conceptTitle;
     document.getElementById('resultDescription').textContent = introMessage;
     
-    // Generate dynamic content based on element
-    const elementColors = {
-        kim: "Trắng, bạc, xám, đen - tone lạnh và sang trọng",
-        moc: "Xanh lá, nâu, beige, vàng nhạt - tone tự nhiên",
-        thuy: "Xanh dương, xanh biển, trắng, pastel - tone mát mẻ",
-        hoa: "Đỏ, cam, vàng, hồng - tone ấm và năng động",
-        tho: "Nâu, beige, vàng đất, terracotta - tone ấm và tự nhiên"
-    };
-    
-    const elementLighting = {
-        kim: "Ánh sáng studio tinh tế, high-key hoặc low-key tạo chiều sâu",
-        moc: "Ánh sáng tự nhiên, golden hour, ánh sáng dịu nhẹ",
-        thuy: "Ánh sáng mềm mại, low-key, ánh sáng tự nhiên mờ",
-        hoa: "Ánh sáng vàng ấm, dramatic lighting, ánh sáng tạo điểm nhấn",
-        tho: "Ánh sáng vàng ấm, ánh sáng tự nhiên đầy đủ, high-key"
-    };
-    
-    document.getElementById('resultStyle').textContent = personaText;
-    document.getElementById('resultMood').textContent = moodText;
-    document.getElementById('resultColors').textContent = elementColors[quizState.element];
-    document.getElementById('resultLighting').textContent = elementLighting[quizState.element];
-    document.getElementById('resultOutfit').textContent = `Dựa trên "${quizState.choice2}" và "${quizState.choice3}", studio sẽ tư vấn trang phục phù hợp nhất.`;
-    document.getElementById('resultMakeup').textContent = `Dựa trên "${quizState.choice2}" và "${quizState.choice3}", studio sẽ tư vấn make up và tóc phù hợp nhất.`;
-    document.getElementById('resultPose').textContent = `Dựa trên "${quizState.choice2}" và "${quizState.choice3}", studio sẽ hướng dẫn pose và cảm xúc phù hợp nhất.`;
+    // Hiển thị các concept gợi ý khác
+    displayConceptSuggestions();
 
     // Hiển thị 3 ảnh tương ứng với 3 lựa chọn
     const selectedImages = [
@@ -732,6 +760,11 @@ function showResult() {
     
     // Tự động lưu kết quả vào Google Sheets
     saveToGoogleSheets();
+    
+    // Hiển thị modal voucher sau khi hiển thị kết quả
+    setTimeout(() => {
+        showVoucherModal();
+    }, 500);
 }
 
 function saveResult() {
@@ -806,11 +839,38 @@ function restartQuiz() {
     window.scrollTo(0, 0);
 }
 
+// Voucher Modal Functions
+const VOUCHER_LINK = 'YOUR_VOUCHER_LINK_HERE'; // Thay đổi link này sau
+
+function showVoucherModal() {
+    document.getElementById('voucherModal').classList.remove('hidden');
+}
+
+function closeVoucherModal() {
+    document.getElementById('voucherModal').classList.add('hidden');
+}
+
+function claimVoucher() {
+    // Điều hướng đến trang voucher (sẽ cập nhật link sau)
+    if (VOUCHER_LINK && VOUCHER_LINK !== 'YOUR_VOUCHER_LINK_HERE') {
+        window.open(VOUCHER_LINK, '_blank');
+    } else {
+        // Nếu chưa có link, chỉ đóng modal
+        alert('Voucher đã được gửi đến bạn! Studio sẽ liên hệ sớm nhất có thể.');
+    }
+    closeVoucherModal();
+}
+
 // Close modal when clicking outside
 window.onclick = function(event) {
     const modal = document.getElementById('contactModal');
     if (event.target === modal) {
         closeModal();
+    }
+    
+    const voucherModal = document.getElementById('voucherModal');
+    if (event.target === voucherModal) {
+        closeVoucherModal();
     }
 }
 

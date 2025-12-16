@@ -151,34 +151,9 @@
             </div>
 
             <div class="result-details">
-                <h2>Định hướng hình ảnh đề xuất</h2>
-                <div class="detail-item">
-                    <h3>✨ Phong cách gợi ý</h3>
-                    <p id="resultStyle"></p>
-                </div>
-                <div class="detail-item">
-                    <h3>🌈 Tông cảm xúc</h3>
-                    <p id="resultMood"></p>
-                </div>
-                <div class="detail-item">
-                    <h3>🎨 Gam màu chủ đạo</h3>
-                    <p id="resultColors"></p>
-                </div>
-                <div class="detail-item">
-                    <h3>💡 Kiểu ánh sáng</h3>
-                    <p id="resultLighting"></p>
-                </div>
-                <div class="detail-item">
-                    <h3>👗 Gợi ý trang phục</h3>
-                    <p id="resultOutfit"></p>
-                </div>
-                <div class="detail-item">
-                    <h3>💄 Gợi ý make up & tóc</h3>
-                    <p id="resultMakeup"></p>
-                </div>
-                <div class="detail-item">
-                    <h3>📸 Gợi ý pose / cảm xúc</h3>
-                    <p id="resultPose"></p>
+                <h2>Các concept gợi ý khác</h2>
+                <div class="concept-suggestions" id="conceptSuggestions">
+                    <!-- Các concept gợi ý sẽ được hiển thị ở đây -->
                 </div>
             </div>
 
@@ -205,6 +180,20 @@
             <button class="restart-button" onclick="restartQuiz()">Làm lại khảo sát</button>
         </div>
     </section>
+
+    <!-- Voucher Modal -->
+    <div id="voucherModal" class="voucher-modal hidden">
+        <div class="voucher-modal-content">
+            <span class="close-voucher" onclick="closeVoucherModal()">&times;</span>
+            <div class="voucher-icon">🎉</div>
+            <h2 class="voucher-title">Chúc mừng bạn!</h2>
+            <p class="voucher-message">Bạn đã nhận được voucher giảm giá <strong>20%</strong> cho buổi chụp ảnh tại studio!</p>
+            <div class="voucher-actions">
+                <button class="voucher-button" onclick="claimVoucher()">Nhận voucher</button>
+                <button class="voucher-close-button" onclick="closeVoucherModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Form Modal -->
     <div id="contactModal" class="modal hidden">
