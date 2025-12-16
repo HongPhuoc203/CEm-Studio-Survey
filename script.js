@@ -11,13 +11,14 @@ let quizState = {
     choice2Image: null,
     choice3Image: null,
     name: '',
-    phone: ''
+    phone: '',
+    birthday: ''
 };
 
 // Step 2 questions and options based on element
 const step2Questions = {
     kim: {
-        question: "Khi chụp ảnh, bạn thích mình xuất hiện với phong cách nào?",
+        question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
             "Tối giản – sang trọng",
             "Công sở hiện đại",
@@ -27,7 +28,7 @@ const step2Questions = {
         ]
     },
     moc: {
-        question: "Bạn muốn chụp ảnh ở không gian nào?",
+        question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
             "Công viên, vườn cây xanh",
             "Studio với backdrop tự nhiên",
@@ -37,7 +38,7 @@ const step2Questions = {
         ]
     },
     thuy: {
-        question: "Bạn muốn tạo cảm giác gì trong bức ảnh?",
+        question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
             "Mơ màng, lãng mạn",
             "Sâu sắc, trầm tư",
@@ -47,7 +48,7 @@ const step2Questions = {
         ]
     },
     hoa: {
-        question: "Bạn muốn thể hiện năng lượng như thế nào?",
+        question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
             "Nhiệt huyết, đầy đam mê",
             "Quyến rũ, gợi cảm",
@@ -57,7 +58,7 @@ const step2Questions = {
         ]
     },
     tho: {
-        question: "Bạn muốn không gian chụp ảnh như thế nào?",
+        question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
             "Ấm áp, thân thiện",
             "Ổn định, chắc chắn",
@@ -497,8 +498,29 @@ function submitPreSurvey() {
     quizState.phone = phone;
     if (err) err.classList.add('hidden');
     
-    // move to quiz step 1
+    // move to birthday step
     document.getElementById('preSurvey').classList.add('hidden');
+    document.getElementById('birthdaySurvey').classList.remove('hidden');
+}
+
+function backToPreSurvey() {
+    document.getElementById('birthdaySurvey').classList.add('hidden');
+    document.getElementById('preSurvey').classList.remove('hidden');
+}
+
+function submitBirthday() {
+    const birthdayInput = document.getElementById('birthday');
+    const err = document.getElementById('birthdayError');
+    const birthday = (birthdayInput?.value || '').trim();
+    
+    if (!birthday) {
+        if (err) err.classList.remove('hidden');
+        return;
+    }
+    quizState.birthday = birthday;
+    if (err) err.classList.add('hidden');
+    
+    document.getElementById('birthdaySurvey').classList.add('hidden');
     document.getElementById('quiz').classList.remove('hidden');
     updateProgress(1);
 }
@@ -612,7 +634,7 @@ function updateProgress(step) {
 // Hàm gửi dữ liệu đến Google Sheets
 function saveToGoogleSheets() {
     // Kiểm tra xem đã cấu hình URL chưa
-    if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL === 'YOUR_WEB_APP_URL_HERE') {
+    if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL === 'https://script.google.com/macros/s/AKfycbwLFLQTVXySc9v1WQi8PtSYFLgS3-T2QqLjR4gjFsJx4rucUlF0zraLmmj7CDlCpfQCBw/exec') {
         console.log('Google Sheets URL chưa được cấu hình. Vui lòng xem file HUONG_DAN_GOOGLE_SHEETS.md');
         return;
     }
@@ -627,6 +649,7 @@ function saveToGoogleSheets() {
         choice3: quizState.choice3,
         name: quizState.name,
         phone: quizState.phone,
+        birthday: quizState.birthday,
         conceptTitle: conceptTitle
     };
     
@@ -767,7 +790,8 @@ function restartQuiz() {
         choice2Image: null,
         choice3Image: null,
         name: quizState.name,
-        phone: quizState.phone
+        phone: quizState.phone,
+        birthday: quizState.birthday
     };
     
     document.getElementById('result').classList.add('hidden');

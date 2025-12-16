@@ -51,6 +51,25 @@
         </div>
     </section>
 
+    <!-- Birthday Survey -->
+    <section id="birthdaySurvey" class="pre-survey-section hidden">
+        <div class="pre-survey-container">
+            <h2 class="pre-title">Sinh nhật của bạn</h2>
+            <p class="pre-desc">Chúng tôi sẽ dùng thông tin này để cá nhân hóa gợi ý concept và gửi lời chúc phù hợp.</p>
+            
+            <div class="pre-form">
+                <label>
+                    Ngày sinh
+                    <input type="date" id="birthday" required>
+                </label>
+                <p class="pre-hint">*Chỉ dùng cho mục đích cá nhân hóa, không chia sẻ ra bên ngoài.</p>
+                <button class="cta-button" onclick="submitBirthday()">Tiếp tục khảo sát</button>
+                <button class="link-button" onclick="backToPreSurvey()">← Quay lại</button>
+                <p id="birthdayError" class="pre-error hidden">Vui lòng nhập ngày sinh.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Quiz Section -->
     <section id="quiz" class="quiz-section hidden">
         <div class="quiz-container">
@@ -67,31 +86,31 @@
                 <h2 class="step-title">Để vũ trụ kết nối đúng tần số, bạn có nhớ mình thuộc mệnh nào trong Ngũ Hành không?</h2>
                 <div class="choices-grid">
                     <div class="choice-card" onclick="selectElement('kim')">
-                        <img class="choice-thumb" src="Images/Kim/kim 1.1.jpg" alt="Hình minh họa element Kim">
+                        <img class="choice-thumb" src="Images/Kim/kim 3.2.jpg" alt="Hình minh họa element Kim">
                         <div class="element-icon kim-icon">⚪</div>
                         <h3>Kim (Metal)</h3>
                         <p>Thanh lịch, chỉn chu, tinh tế và sang trọng</p>
                     </div>
                     <div class="choice-card" onclick="selectElement('moc')">
-                        <img class="choice-thumb" src="Images/Mộc/mộc 1.1.jpg" alt="Hình minh họa element Mộc">
+                        <img class="choice-thumb" src="Images/Mộc/mộc 4.2.jpg" alt="Hình minh họa element Mộc">
                         <div class="element-icon moc-icon">🌳</div>
                         <h3>Mộc (Wood)</h3>
                         <p>Tự nhiên, gần gũi, tươi mới và tràn đầy sức sống</p>
                     </div>
                     <div class="choice-card" onclick="selectElement('thuy')">
-                        <img class="choice-thumb" src="Images/Thuỷ/thuỷ 1.1.jpg" alt="Hình minh họa element Thủy">
+                        <img class="choice-thumb" src="Images/Thuỷ/thuỷ 3.5.jpg" alt="Hình minh họa element Thủy">
                         <div class="element-icon thuy-icon">💧</div>
                         <h3>Thủy (Water)</h3>
                         <p>Mềm mại, linh hoạt, sâu sắc và mơ màng</p>
                     </div>
                     <div class="choice-card" onclick="selectElement('hoa')">
-                        <img class="choice-thumb" src="Images/Hoả/hoả 1.1.jpg" alt="Hình minh họa element Hỏa">
+                        <img class="choice-thumb" src="Images/Hoả/hoả 3.1.jpg" alt="Hình minh họa element Hỏa">
                         <div class="element-icon hoa-icon">🔥</div>
                         <h3>Hỏa (Fire)</h3>
                         <p>Nhiệt huyết, năng động, quyến rũ và đầy cảm xúc</p>
                     </div>
                     <div class="choice-card" onclick="selectElement('tho')">
-                        <img class="choice-thumb" src="Images/Thổ/thổ 1.1.jpg" alt="Hình minh họa element Thổ">
+                        <img class="choice-thumb" src="Images/Thổ/thổ 1.2.jpg" alt="Hình minh họa element Thổ">
                         <div class="element-icon tho-icon">🌍</div>
                         <h3>Thổ (Earth)</h3>
                         <p>Ổn định, chắc chắn, ấm áp và đáng tin cậy</p>
