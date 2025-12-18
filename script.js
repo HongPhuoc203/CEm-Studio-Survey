@@ -20,60 +20,61 @@ const step2Questions = {
     kim: {
         question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
-            "Tối giản – sang trọng",
-            "Công sở hiện đại",
-            "Glam ánh kim",
-            "Cổ điển, thanh lịch",
-            "Ảnh chân dung nghệ sĩ"
+            "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.",
+            "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.",
+            "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.",
+            "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.",
+            "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage."
         ]
     },
     moc: {
         question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
-            "Công viên, vườn cây xanh",
-            "Studio với backdrop tự nhiên",
-            "Quán cà phê ấm cúng",
-            "Ngoài trời, ánh sáng tự nhiên",
-            "Không gian vintage, retro"
+            "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.",
+            "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.",
+            "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.",
+            "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.",
+            "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage."
         ]
     },
     thuy: {
         question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
-            "Mơ màng, lãng mạn",
-            "Sâu sắc, trầm tư",
-            "Mềm mại, dịu dàng",
-            "Nghệ thuật, trừu tượng",
-            "Tự nhiên, trong trẻo"
+            "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.",
+            "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.",
+            "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.",
+            "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.",
+            "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage."
         ]
     },
     hoa: {
         question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
-            "Nhiệt huyết, đầy đam mê",
-            "Quyến rũ, gợi cảm",
-            "Năng động, trẻ trung",
-            "Cá tính, mạnh mẽ",
-            "Vui vẻ, rạng rỡ"
+            "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.",
+            "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.",
+            "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.",
+            "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.",
+            "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage."
         ]
     },
     tho: {
         question: "Bạn đang bị 'mê hoặc' bởi gam màu nào nhất dưới đây?",
         options: [
-            "Ấm áp, thân thiện",
-            "Ổn định, chắc chắn",
-            "Tự nhiên, gần gũi",
-            "Cổ điển, truyền thống",
-            "Hiện đại nhưng ấm cúng"
+            "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.",
+            "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.",
+            "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.",
+            "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.",
+            "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage."
         ]
     }
 };
 
 // Step 3 questions and options based on element and choice2
+// Lưu ý: Keys phải khớp chính xác với các options trong step2Questions
 const step3Questions = {
     kim: {
-        "Tối giản – sang trọng": {
-            question: "Bạn muốn ánh sáng như thế nào?",
+        "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Ánh sáng tự nhiên, dịu nhẹ",
                 "Studio lighting tinh tế",
@@ -82,8 +83,8 @@ const step3Questions = {
                 "Ánh sáng vàng ấm"
             ]
         },
-        "Công sở hiện đại": {
-            question: "Bạn muốn trang phục như thế nào?",
+        "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Suit, blazer chỉn chu",
                 "Áo sơ mi và quần tây",
@@ -92,8 +93,8 @@ const step3Questions = {
                 "Mix & match thanh lịch"
             ]
         },
-        "Glam ánh kim": {
-            question: "Bạn muốn make up như thế nào?",
+        "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Smoky eyes và môi đỏ",
                 "Make up ánh kim nổi bật",
@@ -102,8 +103,8 @@ const step3Questions = {
                 "Sang trọng, quý phái"
             ]
         },
-        "Cổ điển, thanh lịch": {
-            question: "Bạn muốn cảm xúc trong ảnh như thế nào?",
+        "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Trầm tư, sâu sắc",
                 "Tự tin, quyền lực",
@@ -112,8 +113,8 @@ const step3Questions = {
                 "Cổ điển, vượt thời gian"
             ]
         },
-        "Ảnh chân dung nghệ sĩ": {
-            question: "Bạn muốn pose như thế nào?",
+        "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Chân dung cận cảnh",
                 "Pose nghệ thuật, độc đáo",
@@ -124,8 +125,8 @@ const step3Questions = {
         }
     },
     moc: {
-        "Công viên, vườn cây xanh": {
-            question: "Bạn muốn ánh sáng như thế nào?",
+        "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Ánh sáng tự nhiên buổi sáng",
                 "Golden hour",
@@ -134,8 +135,8 @@ const step3Questions = {
                 "Ánh sáng tự nhiên đầy đủ"
             ]
         },
-        "Studio với backdrop tự nhiên": {
-            question: "Bạn muốn trang phục như thế nào?",
+        "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Váy flowy, tự nhiên",
                 "Áo trắng đơn giản",
@@ -144,8 +145,8 @@ const step3Questions = {
                 "Mix tự nhiên và hiện đại"
             ]
         },
-        "Quán cà phê ấm cúng": {
-            question: "Bạn muốn cảm xúc trong ảnh như thế nào?",
+        "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Thư giãn, thoải mái",
                 "Ấm áp, thân thiện",
@@ -154,8 +155,8 @@ const step3Questions = {
                 "Vui vẻ, tích cực"
             ]
         },
-        "Ngoài trời, ánh sáng tự nhiên": {
-            question: "Bạn muốn make up như thế nào?",
+        "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Natural, không make up",
                 "Make up nhẹ nhàng",
@@ -164,8 +165,8 @@ const step3Questions = {
                 "Minimal, fresh"
             ]
         },
-        "Không gian vintage, retro": {
-            question: "Bạn muốn pose như thế nào?",
+        "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Tự nhiên, không gò bó",
                 "Pose cổ điển",
@@ -176,8 +177,8 @@ const step3Questions = {
         }
     },
     thuy: {
-        "Mơ màng, lãng mạn": {
-            question: "Bạn muốn gam màu như thế nào?",
+        "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Pastel nhẹ nhàng",
                 "Xanh dương, xanh lá nhạt",
@@ -186,8 +187,8 @@ const step3Questions = {
                 "Màu nước trong suốt"
             ]
         },
-        "Sâu sắc, trầm tư": {
-            question: "Bạn muốn ánh sáng như thế nào?",
+        "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Ánh sáng dịu, low-key",
                 "Ánh sáng xanh lạnh",
@@ -196,8 +197,8 @@ const step3Questions = {
                 "Studio lighting mềm mại"
             ]
         },
-        "Mềm mại, dịu dàng": {
-            question: "Bạn muốn trang phục như thế nào?",
+        "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Váy mềm mại, flowy",
                 "Áo trắng nhẹ nhàng",
@@ -206,8 +207,8 @@ const step3Questions = {
                 "Trang phục đơn giản, tinh tế"
             ]
         },
-        "Nghệ thuật, trừu tượng": {
-            question: "Bạn muốn make up như thế nào?",
+        "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Natural, dewy skin",
                 "Make up mềm mại",
@@ -216,8 +217,8 @@ const step3Questions = {
                 "Make up nghệ thuật"
             ]
         },
-        "Tự nhiên, trong trẻo": {
-            question: "Bạn muốn pose như thế nào?",
+        "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Pose mềm mại, uyển chuyển",
                 "Chuyển động nhẹ nhàng",
@@ -228,8 +229,8 @@ const step3Questions = {
         }
     },
     hoa: {
-        "Nhiệt huyết, đầy đam mê": {
-            question: "Bạn muốn gam màu như thế nào?",
+        "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Đỏ, cam rực rỡ",
                 "Vàng, vàng cam",
@@ -238,8 +239,8 @@ const step3Questions = {
                 "Màu sắc sống động"
             ]
         },
-        "Quyến rũ, gợi cảm": {
-            question: "Bạn muốn ánh sáng như thế nào?",
+        "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Ánh sáng vàng ấm",
                 "Studio lighting dramatic",
@@ -248,8 +249,8 @@ const step3Questions = {
                 "Ánh sáng tạo chiều sâu"
             ]
         },
-        "Năng động, trẻ trung": {
-            question: "Bạn muốn trang phục như thế nào?",
+        "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Trang phục màu sắc",
                 "Streetwear năng động",
@@ -258,8 +259,8 @@ const step3Questions = {
                 "Trang phục thể thao"
             ]
         },
-        "Cá tính, mạnh mẽ": {
-            question: "Bạn muốn make up như thế nào?",
+        "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Bold lips đỏ",
                 "Smoky eyes dramatic",
@@ -268,8 +269,8 @@ const step3Questions = {
                 "Make up cá tính"
             ]
         },
-        "Vui vẻ, rạng rỡ": {
-            question: "Bạn muốn pose như thế nào?",
+        "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Pose năng động",
                 "Nhảy, chuyển động",
@@ -280,8 +281,8 @@ const step3Questions = {
         }
     },
     tho: {
-        "Ấm áp, thân thiện": {
-            question: "Bạn muốn gam màu như thế nào?",
+        "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Tone ấm, beige, nâu",
                 "Vàng nhạt, kem",
@@ -290,8 +291,8 @@ const step3Questions = {
                 "Màu tự nhiên, earth tone"
             ]
         },
-        "Ổn định, chắc chắn": {
-            question: "Bạn muốn ánh sáng như thế nào?",
+        "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Ánh sáng vàng ấm",
                 "Ánh sáng tự nhiên đầy đủ",
@@ -300,8 +301,8 @@ const step3Questions = {
                 "Ánh sáng dịu nhẹ"
             ]
         },
-        "Tự nhiên, gần gũi": {
-            question: "Bạn muốn trang phục như thế nào?",
+        "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Trang phục tự nhiên",
                 "Áo len, ấm áp",
@@ -310,8 +311,8 @@ const step3Questions = {
                 "Mix tự nhiên và hiện đại"
             ]
         },
-        "Cổ điển, truyền thống": {
-            question: "Bạn muốn make up như thế nào?",
+        "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Natural, healthy glow",
                 "Make up nhẹ nhàng",
@@ -320,8 +321,8 @@ const step3Questions = {
                 "Minimal, fresh"
             ]
         },
-        "Hiện đại nhưng ấm cúng": {
-            question: "Bạn muốn pose như thế nào?",
+        "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
+            question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
                 "Tự nhiên, thoải mái",
                 "Ngồi, đứng ổn định",
@@ -548,7 +549,9 @@ function selectElement(element) {
         card.onclick = () => selectChoice2(option);
         
         const optionImages = elementImages[element]?.step2 || [];
-        const imgSrc = optionImages[index] || optionImages[optionImages.length - 1] || elementImages[element]?.step1 || '';
+        // Đảm bảo index không vượt quá độ dài mảng (step2 có 4 ảnh, nhưng có 5 options)
+        const imgIndex = Math.min(index, optionImages.length - 1);
+        const imgSrc = optionImages[imgIndex] || optionImages[0] || elementImages[element]?.step1 || '';
         card.innerHTML = `
             <img class="choice-thumb" src="${imgSrc}" alt="Ảnh ${option}">
             <p>${option}</p>
@@ -585,7 +588,9 @@ function selectChoice2(choice) {
         card.onclick = () => selectChoice3(option);
         
         const optionImages = elementImages[quizState.element]?.step3 || [];
-        const imgSrc = optionImages[index] || optionImages[optionImages.length - 1] || quizState.elementImage;
+        // Đảm bảo index không vượt quá độ dài mảng (step3 có 4 ảnh, nhưng có 5 options)
+        const imgIndex = Math.min(index, optionImages.length - 1);
+        const imgSrc = optionImages[imgIndex] || optionImages[0] || quizState.elementImage || '';
         card.innerHTML = `
             <img class="choice-thumb" src="${imgSrc}" alt="Ảnh ${option}">
             <p>${option}</p>
@@ -769,18 +774,16 @@ function showResult() {
 
 function saveResult() {
     const resultText = `
-Aura Portrait Studio - Kết quả khảo sát
+Cem Studio - Kết quả khảo sát
 
 Concept: ${document.getElementById('resultTitle').textContent}
 
 ${document.getElementById('resultDescription').textContent}
 
-Định hướng hình ảnh:
-- Gam màu: ${document.getElementById('resultColors').textContent}
-- Ánh sáng: ${document.getElementById('resultLighting').textContent}
-- Trang phục: ${document.getElementById('resultOutfit').textContent}
-- Make up & tóc: ${document.getElementById('resultMakeup').textContent}
-- Pose & cảm xúc: ${document.getElementById('resultPose').textContent}
+Thông tin khảo sát:
+- Element: ${elementNames[quizState.element]}
+- Gam màu yêu thích: ${quizState.choice2}
+- Phiên bản mong muốn: ${quizState.choice3}
 
 Bạn có thể chụp màn hình để lưu lại kết quả này.
     `;
