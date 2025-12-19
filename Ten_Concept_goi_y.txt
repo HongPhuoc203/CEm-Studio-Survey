@@ -1,0 +1,34 @@
+Folder Hoa:
+    Folder Concept1:Nữ Hoàng Á Đông: Rực rỡ & Kiêu sa
+    Folder Concept2:Tâm Điểm Của Bữa Tiệc: Rực rỡ & Nổi bật
+    Folder Concept3:Quý Cô Bí Ẩn: Huyền bí & Sâu lắng
+    Folder Concept4:Người Phụ Nữ Trưởng Thành: Ấm áp & Hoài niệm
+    Folder Concept5:Nữ Hoàng Quyền Lực: Lấp lánh & Sang trọng
+
+Folder Kim:
+    Folder Concept1:Nữ Thần Ánh Kim: Lấp lánh & Sang trọng
+    Folder Concept2:Quý Cô Bí Ẩn: Huyền bí & Sâu lắng
+    Folder Concept3:Người Phụ Nữ An Yên: Ấm áp & Hoài niệm
+    Folder Concept4:Tâm Điểm Của Bữa Tiệc: Rực rỡ & Nổi bật
+    Folder Concept5:Nữ Hoàng Quyền Lực: Lấp lánh & Sang trọng
+
+Folder Moc:
+    Folder Concept1:Nàng Thơ Mộng Mơ: Tươi mát & Trong trẻo
+    Folder Concept2:Người Phụ Nữ An Yên: Ấm áp & Hoài niệm
+    Folder Concept3:Quý Cô Bí Ẩn: Huyền bí & Sâu lắng
+    Folder Concept4:Tâm Điểm Của Bữa Tiệc: Rực rỡ & Nổi bật
+    Folder Concept5:Nữ Hoàng Quyền Lực: Lấp lánh & Sang trọng
+
+Folder Thuy:
+    Folder Concept1:Nàng Thơ Mộng Mơ: Tươi mát & Trong trẻo
+    Folder Concept2:Quý Cô Bí Ẩn: Huyền bí & Sâu lắng
+    Folder Concept3:Quý Cô Á Đông: Ấm áp & Hoài niệm
+    Folder Concept4:Người Con Gái Trầm Lặng: Tươi mát & Trong trẻo
+    
+
+Folder Tho:
+    Folder Concept1:Người Phụ Nữ An Yên: Ấm áp & Hoài niệm
+    Folder Concept2:Quý Cô Thanh Lịch: Tươi mát & Trong trẻo
+    Folder Concept3:Nữ Hoàng Trưởng Thành: Lấp lánh & Sang trọng
+    Folder Concept4:Quý Cô Bí Ẩn: Huyền bí & Sâu lắng
+    Folder Concept5:Người Phụ Nữ Dịu Dàng: Ấm áp & Hoài niệm

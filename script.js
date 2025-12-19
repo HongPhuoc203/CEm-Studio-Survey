@@ -375,6 +375,24 @@ const moods = [
     "Ấm áp & Hoài niệm"
 ];
 
+const question2Images = [
+    "Images/Question2/kim.jpg",
+    "Images/Question2/moc.jpg",
+    "Images/Question2/thuy.jpg",
+    "Images/Question2/hoa.jpg",
+    "Images/Question2/tho.jpg"
+];
+
+// Và trong thư mục Images/question3 có 5 ảnh:
+// q3-1.jpg, q3-2.jpg, q3-3.jpg, q3-4.jpg, q3-5.jpg
+const question3Images = [
+    "Images/question3/kim.jpg",
+    "Images/question3/moc.jpg",
+    "Images/question3/thuy.jpg",
+    "Images/question3/hoa.jpg",
+    "Images/question3/tho.jpg"
+];
+
 // Ảnh minh họa cho từng ngũ hành theo từng bước (lấy từ thư mục Images)
 const elementImages = {
     kim: {
@@ -548,10 +566,10 @@ function selectElement(element) {
         card.className = 'choice-card';
         card.onclick = () => selectChoice2(option);
         
-        const optionImages = elementImages[element]?.step2 || [];
-        // Đảm bảo index không vượt quá độ dài mảng (step2 có 4 ảnh, nhưng có 5 options)
+        const optionImages = question2Images;
+        // Dùng index của vòng lặp để chọn ảnh tương ứng (1-1 với 5 lựa chọn)
         const imgIndex = Math.min(index, optionImages.length - 1);
-        const imgSrc = optionImages[imgIndex] || optionImages[0] || elementImages[element]?.step1 || '';
+        const imgSrc = optionImages[imgIndex] || optionImages[0] || quizState.elementImage || '';
         card.innerHTML = `
             <img class="choice-thumb" src="${imgSrc}" alt="Ảnh ${option}">
             <p>${option}</p>
@@ -559,17 +577,20 @@ function selectElement(element) {
         step2ChoicesContainer.appendChild(card);
     });
     
-    // Hiển thị ảnh minh họa cho bước 2
-    renderGallery('step2Gallery', elementImages[element].step2, element);
+    // Hiển thị ảnh minh họa cho bước 2 (nếu có container)
+    renderGallery('step2Gallery', question2Images, element);
     
     updateProgress(2);
 }
 
 function selectChoice2(choice) {
     quizState.choice2 = choice;
-    const optionImages = elementImages[quizState.element]?.step2 || [];
-    const choiceIndex = step2Questions[quizState.element].options.indexOf(choice);
-    quizState.choice2Image = optionImages[choiceIndex] || optionImages[optionImages.length - 1] || quizState.elementImage;
+    const optionImages = question2Images;
+    // Tìm index của lựa chọn trong danh sách options của mệnh hiện tại
+    const optionsForElement = step2Questions[quizState.element].options;
+    const choiceIndex = optionsForElement.indexOf(choice);
+    const imgIndex = Math.min(Math.max(choiceIndex, 0), optionImages.length - 1);
+    quizState.choice2Image = optionImages[imgIndex] || optionImages[0] || quizState.elementImage;
     
     // Show step 3
     document.getElementById('step2').classList.add('hidden');
@@ -587,8 +608,8 @@ function selectChoice2(choice) {
         card.className = 'choice-card';
         card.onclick = () => selectChoice3(option);
         
-        const optionImages = elementImages[quizState.element]?.step3 || [];
-        // Đảm bảo index không vượt quá độ dài mảng (step3 có 4 ảnh, nhưng có 5 options)
+        const optionImages = question3Images;
+        // Dùng index để chọn 1 trong 5 ảnh cho 5 lựa chọn
         const imgIndex = Math.min(index, optionImages.length - 1);
         const imgSrc = optionImages[imgIndex] || optionImages[0] || quizState.elementImage || '';
         card.innerHTML = `
@@ -598,7 +619,7 @@ function selectChoice2(choice) {
         step3ChoicesContainer.appendChild(card);
     });
     
-    // Hiển thị ảnh minh họa cho bước 3
+    // Hiển thị ảnh minh họa cho bước 3 (gallery tham khảo theo mệnh)
     renderGallery('step3Gallery', elementImages[quizState.element].step3, quizState.element);
     
     updateProgress(3);
@@ -606,9 +627,12 @@ function selectChoice2(choice) {
 
 function selectChoice3(choice) {
     quizState.choice3 = choice;
-    const optionImages = elementImages[quizState.element]?.step3 || [];
-    const choiceIndex = step3Questions[quizState.element][quizState.choice2].options.indexOf(choice);
-    quizState.choice3Image = optionImages[choiceIndex] || optionImages[optionImages.length - 1] || quizState.elementImage;
+    const optionImages = question3Images;
+    // Tìm index của lựa chọn trong danh sách options của câu hỏi bước 3 tương ứng
+    const optionsForStep3 = step3Questions[quizState.element][quizState.choice2].options;
+    const choiceIndex = optionsForStep3.indexOf(choice);
+    const imgIndex = Math.min(Math.max(choiceIndex, 0), optionImages.length - 1);
+    quizState.choice3Image = optionImages[imgIndex] || optionImages[0] || quizState.elementImage;
     showResult();
 }
 
