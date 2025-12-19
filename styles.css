@@ -554,8 +554,8 @@ body {
 }
 
 .concept-suggestions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 1.5rem;
     margin-top: 1rem;
 }
@@ -564,11 +564,12 @@ body {
     background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
     border: 2px solid #e0e0e0;
     border-radius: 12px;
-    padding: 0;
-    text-align: center;
+    padding: 1.5rem 1.25rem;
+    text-align: left;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .concept-card:hover {
@@ -578,16 +579,34 @@ body {
 }
 
 .concept-image {
-    width: 100%;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     display: block;
     background: #f9f9f9;
 }
 
+.concept-images-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+}
+
+.concept-images-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.concept-images-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
 .concept-number {
     position: absolute;
-    top: -12px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
     width: 32px;

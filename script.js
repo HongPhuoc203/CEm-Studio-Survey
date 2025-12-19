@@ -1,6 +1,6 @@
 // Google Sheets Web App URL - Thay đổi URL này sau khi deploy Google Apps Script
 // Lấy URL từ bước 3 trong file HUONG_DAN_GOOGLE_SHEETS.md
-const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwLFLQTVXySc9v1WQi8PtSYFLgS3-T2QqLjR4gjFsJx4rucUlF0zraLmmj7CDlCpfQCBw/exec';
+const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbycglgrmmbDf3lKUg6iJbc76AdTqUu1AaEyvNNrgwZ6P_ymvnhtE436wkY7sLkS02YAIQ/exec';
 
 // Quiz State
 let quizState = {
@@ -375,6 +375,237 @@ const moods = [
     "Ấm áp & Hoài niệm"
 ];
 
+// Dữ liệu concept gợi ý theo ngũ hành, dựa trên Ten_Concept_goi_y.txt
+// Mỗi concept có: title (tên concept hiển thị) và danh sách ảnh trong folder tương ứng
+const conceptSuggestionsData = {
+    hoa: [
+        {
+            title: "Nữ Hoàng Á Đông – Rực rỡ & Kiêu sa",
+            images: [
+                "Images/Concept_goi_y/Hoa/Concept1/hoả 1.1.jpg",
+                "Images/Concept_goi_y/Hoa/Concept1/hoả 1.2.jpg",
+                "Images/Concept_goi_y/Hoa/Concept1/hoả 1.3.jpg",
+                "Images/Concept_goi_y/Hoa/Concept1/hoả 1.4.jpg"
+            ]
+        },
+        {
+            title: "Tâm Điểm Của Bữa Tiệc – Rực rỡ & Nổi bật",
+            images: [
+                "Images/Concept_goi_y/Hoa/Concept2/hoả 4.1.jpg",
+                "Images/Concept_goi_y/Hoa/Concept2/hoả 4.2.jpg",
+                "Images/Concept_goi_y/Hoa/Concept2/hoả 4.3.jpg",
+                "Images/Concept_goi_y/Hoa/Concept2/hoả 4.4.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Bí Ẩn – Huyền bí & Sâu lắng",
+            images: [
+                "Images/Concept_goi_y/Hoa/Concept3/hoả 5.1.jpg",
+                "Images/Concept_goi_y/Hoa/Concept3/hoả 5.2.jpg",
+                "Images/Concept_goi_y/Hoa/Concept3/hoả 5.3.jpg",
+                "Images/Concept_goi_y/Hoa/Concept3/hoả 5.4.jpg"
+            ]
+        },
+        {
+            title: "Người Phụ Nữ Trưởng Thành – Ấm áp & Hoài niệm",
+            images: [
+                "Images/Concept_goi_y/Hoa/Concept4/hoả 2.1.jpg",
+                "Images/Concept_goi_y/Hoa/Concept4/hoả 2.2.jpg",
+                "Images/Concept_goi_y/Hoa/Concept4/hoả 2.3.jpg",
+                "Images/Concept_goi_y/Hoa/Concept4/hoả 2.4.jpg"
+            ]
+        },
+        {
+            title: "Nữ Hoàng Quyền Lực – Lấp lánh & Sang trọng",
+            images: [
+                "Images/Concept_goi_y/Hoa/Concept5/hoả 3.1.jpg",
+                "Images/Concept_goi_y/Hoa/Concept5/hoả 3.2.jpg",
+                "Images/Concept_goi_y/Hoa/Concept5/hoả 3.3.jpg",
+                "Images/Concept_goi_y/Hoa/Concept5/hoả 3.4.jpg"
+            ]
+        }
+    ],
+    kim: [
+        {
+            title: "Nữ Thần Ánh Kim – Lấp lánh & Sang trọng",
+            images: [
+                "Images/Concept_goi_y/Kim/Concept1/kim 1.1.jpg",
+                "Images/Concept_goi_y/Kim/Concept1/kim 1.3.jpg",
+                "Images/Concept_goi_y/Kim/Concept1/kim 1.4.jpg",
+                "Images/Concept_goi_y/Kim/Concept1/kim 1,2.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Bí Ẩn – Huyền bí & Sâu lắng",
+            images: [
+                "Images/Concept_goi_y/Kim/Concept2/kim 5.1.jpg",
+                "Images/Concept_goi_y/Kim/Concept2/kim 5.2.jpg",
+                "Images/Concept_goi_y/Kim/Concept2/kim 5.3.jpg",
+                "Images/Concept_goi_y/Kim/Concept2/kim 5.4.jpg"
+            ]
+        },
+        {
+            title: "Người Phụ Nữ An Yên – Ấm áp & Hoài niệm",
+            images: [
+                "Images/Concept_goi_y/Kim/Concept3/kim 2.1.jpg",
+                "Images/Concept_goi_y/Kim/Concept3/kim 2.2.jpg",
+                "Images/Concept_goi_y/Kim/Concept3/kim 2.3.jpg",
+                "Images/Concept_goi_y/Kim/Concept3/kim 2.4.jpg"
+            ]
+        },
+        {
+            title: "Tâm Điểm Của Bữa Tiệc – Rực rỡ & Nổi bật",
+            images: [
+                "Images/Concept_goi_y/Kim/Concept4/kim 3.1.jpg",
+                "Images/Concept_goi_y/Kim/Concept4/kim 3.2.jpg",
+                "Images/Concept_goi_y/Kim/Concept4/kim 3.3.jpg",
+                "Images/Concept_goi_y/Kim/Concept4/kim 3.4.jpg"
+            ]
+        },
+        {
+            title: "Nữ Hoàng Quyền Lực – Lấp lánh & Sang trọng",
+            images: [
+                "Images/Concept_goi_y/Kim/Concept5/kim 4.1.jpg",
+                "Images/Concept_goi_y/Kim/Concept5/kim 4.2.jpg",
+                "Images/Concept_goi_y/Kim/Concept5/kim 4.3.jpg",
+                "Images/Concept_goi_y/Kim/Concept5/kim 4.4.jpg"
+            ]
+        }
+    ],
+    moc: [
+        {
+            title: "Nàng Thơ Mộng Mơ – Tươi mát & Trong trẻo",
+            images: [
+                "Images/Concept_goi_y/Moc/Concept1/mộc 3.1.jpg",
+                "Images/Concept_goi_y/Moc/Concept1/mộc 3.2.jpg",
+                "Images/Concept_goi_y/Moc/Concept1/mộc 3.3.jpg",
+                "Images/Concept_goi_y/Moc/Concept1/mộc 3.4.jpg"
+            ]
+        },
+        {
+            title: "Người Phụ Nữ An Yên – Ấm áp & Hoài niệm",
+            images: [
+                "Images/Concept_goi_y/Moc/Concept2/mộc 4.1.jpg",
+                "Images/Concept_goi_y/Moc/Concept2/mộc 4.2.jpg",
+                "Images/Concept_goi_y/Moc/Concept2/mộc 4.3.jpg",
+                "Images/Concept_goi_y/Moc/Concept2/mộc 4.4.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Bí Ẩn – Huyền bí & Sâu lắng",
+            images: [
+                "Images/Concept_goi_y/Moc/Concept3/mộc 2.1.jpg",
+                "Images/Concept_goi_y/Moc/Concept3/mộc 2.2.jpg",
+                "Images/Concept_goi_y/Moc/Concept3/mộc 2.3.jpg",
+                "Images/Concept_goi_y/Moc/Concept3/mộc 2.4.jpg"
+            ]
+        },
+        {
+            title: "Tâm Điểm Của Bữa Tiệc – Rực rỡ & Nổi bật",
+            images: [
+                "Images/Concept_goi_y/Moc/Concept4/mộc 1.1.jpg",
+                "Images/Concept_goi_y/Moc/Concept4/mộc 1.2.jpg",
+                "Images/Concept_goi_y/Moc/Concept4/mộc 1.3.jpg",
+                "Images/Concept_goi_y/Moc/Concept4/mộc 1.4.jpg"
+            ]
+        },
+        {
+            title: "Nữ Hoàng Quyền Lực – Lấp lánh & Sang trọng",
+            images: [
+                "Images/Concept_goi_y/Moc/Concept5/mộc 5.1.jpg",
+                "Images/Concept_goi_y/Moc/Concept5/mộc 5.2.jpg",
+                "Images/Concept_goi_y/Moc/Concept5/mộc 5.3.jpg",
+                "Images/Concept_goi_y/Moc/Concept5/mộc 5.4.jpg"
+            ]
+        }
+    ],
+    thuy: [
+        {
+            title: "Nàng Thơ Mộng Mơ – Tươi mát & Trong trẻo",
+            images: [
+                "Images/Concept_goi_y/Thuy/Concept1/thuỷ 2.1.jpg",
+                "Images/Concept_goi_y/Thuy/Concept1/thuỷ 2.2.jpg",
+                "Images/Concept_goi_y/Thuy/Concept1/thuỷ 2.3.jpg",
+                "Images/Concept_goi_y/Thuy/Concept1/thuỷ 2.4.jpg",
+                "Images/Concept_goi_y/Thuy/Concept1/thuỷ 4.4.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Bí Ẩn – Huyền bí & Sâu lắng",
+            images: [
+                "Images/Concept_goi_y/Thuy/Concept2/thuỷ 3.1.jpg",
+                "Images/Concept_goi_y/Thuy/Concept2/thuỷ 3.2.jpg",
+                "Images/Concept_goi_y/Thuy/Concept2/thuỷ 3.3.jpg",
+                "Images/Concept_goi_y/Thuy/Concept2/thuỷ 3.5.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Á Đông – Ấm áp & Hoài niệm",
+            images: [
+                "Images/Concept_goi_y/Thuy/Concept3/thuỷ 4.1.jpg",
+                "Images/Concept_goi_y/Thuy/Concept3/thuỷ 4.2.jpg",
+                "Images/Concept_goi_y/Thuy/Concept3/thuỳ 4.3.jpg"
+            ]
+        },
+        {
+            title: "Người Con Gái Trầm Lặng – Tươi mát & Trong trẻo",
+            images: [
+                "Images/Concept_goi_y/Thuy/Concept4/thuỷ 1.1.jpg",
+                "Images/Concept_goi_y/Thuy/Concept4/thuỷ 1.2.jpg",
+                "Images/Concept_goi_y/Thuy/Concept4/thuỷ 1.3.jpg",
+                "Images/Concept_goi_y/Thuy/Concept4/thuỷ 1.4.jpg"
+            ]
+        }
+    ],
+    tho: [
+        {
+            title: "Người Phụ Nữ An Yên – Ấm áp & Hoài niệm",
+            images: [
+                "Images/Concept_goi_y/Tho/Concept1/thổ 1.1.jpg",
+                "Images/Concept_goi_y/Tho/Concept1/thổ 1.2.jpg",
+                "Images/Concept_goi_y/Tho/Concept1/thổ 1.3.jpg",
+                "Images/Concept_goi_y/Tho/Concept1/thổ 1.4.jpg",
+                "Images/Concept_goi_y/Tho/Concept1/thổ 2.1.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Thanh Lịch – Tươi mát & Trong trẻo",
+            images: [
+                "Images/Concept_goi_y/Tho/Concept2/thổ 3.1.jpg",
+                "Images/Concept_goi_y/Tho/Concept2/thổ 3.2.jpg",
+                "Images/Concept_goi_y/Tho/Concept2/thổ 3.3.jpg",
+                "Images/Concept_goi_y/Tho/Concept2/thổ 3.4.jpg"
+            ]
+        },
+        {
+            title: "Nữ Hoàng Trưởng Thành – Lấp lánh & Sang trọng",
+            images: [
+                "Images/Concept_goi_y/Tho/Concept3/thổ 5.1.jpg",
+                "Images/Concept_goi_y/Tho/Concept3/thổ 5.2.jpg",
+                "Images/Concept_goi_y/Tho/Concept3/thổ 5.3.jpg",
+                "Images/Concept_goi_y/Tho/Concept3/thổ 5.4.jpg"
+            ]
+        },
+        {
+            title: "Quý Cô Bí Ẩn – Huyền bí & Sâu lắng",
+            images: [
+                "Images/Concept_goi_y/Tho/Concept4/thổ 2.2.jpg",
+                "Images/Concept_goi_y/Tho/Concept4/thổ 2.3.jpg",
+                "Images/Concept_goi_y/Tho/Concept4/thổ 2.4.jpg"
+            ]
+        },
+        {
+            title: "Người Phụ Nữ Dịu Dàng – Ấm áp & Hoài niệm",
+            images: [
+                "Images/Concept_goi_y/Tho/Concept5/thổ 4.1.jpg",
+                "Images/Concept_goi_y/Tho/Concept5/thổ 4.2.jpg",
+                "Images/Concept_goi_y/Tho/Concept5/thổ 4.3.jpg",
+                "Images/Concept_goi_y/Tho/Concept5/thổ 4.4.jpg"
+            ]
+        }
+    ]
+};
+
 const question2Images = [
     "Images/Question2/kim.jpg",
     "Images/Question2/moc.jpg",
@@ -662,58 +893,41 @@ function updateProgress(step) {
 
 // Hàm gửi dữ liệu đến Google Sheets
 function saveToGoogleSheets() {
-    // Kiểm tra xem đã cấu hình URL chưa
-    if (!GOOGLE_SHEETS_WEB_APP_URL || 
-        GOOGLE_SHEETS_WEB_APP_URL === 'YOUR_WEB_APP_URL_HERE' ||
-        GOOGLE_SHEETS_WEB_APP_URL.includes('127.0.0.1') ||
-        !GOOGLE_SHEETS_WEB_APP_URL.startsWith('https://script.google.com')) {
-        console.log('⚠️ Google Sheets URL chưa được cấu hình đúng.');
-        console.log('URL hiện tại:', GOOGLE_SHEETS_WEB_APP_URL);
-        console.log('Vui lòng cập nhật GOOGLE_SHEETS_WEB_APP_URL trong script.js với URL từ Google Apps Script Web App');
-        return;
+    if (!GOOGLE_SHEETS_WEB_APP_URL.startsWith('https://script.google.com')) {
+      console.log('❌ Web App URL không hợp lệ');
+      return;
     }
-    
-    const elementName = elementNames[quizState.element];
-    const conceptTitle = `Concept: Nàng ${elementName} - ${quizState.choice2}`;
-    
-    // Google Apps Script Web App thường nhận dữ liệu dưới dạng form data hoặc query string
-    // Tạo query string từ dữ liệu
-    const params = new URLSearchParams();
-    params.append('element', elementName || '');
-    params.append('choice2', quizState.choice2 || '');
-    params.append('choice3', quizState.choice3 || '');
-    params.append('name', quizState.name || '');
-    params.append('phone', quizState.phone || '');
-    params.append('birthday', quizState.birthday || '');
-    params.append('conceptTitle', conceptTitle || '');
-    
-    // Gửi bằng GET với query string (phương pháp phổ biến nhất cho Google Apps Script)
-    const url = `${GOOGLE_SHEETS_WEB_APP_URL}?${params.toString()}`;
-    
-    // Sử dụng fetch với no-cors mode (Google Apps Script Web App yêu cầu)
-    fetch(url, {
-        method: 'GET',
-        mode: 'no-cors',
-        cache: 'no-cache'
+  
+    const elementName = elementNames[quizState.element] || '';
+    const conceptTitle = `Concept: ${elementName} - ${quizState.choice2 || ''}`;
+  
+    const data = new URLSearchParams();
+    data.append('name', quizState.name);
+    data.append('phone', quizState.phone);
+    data.append('birthday', quizState.birthday);
+    data.append('element', elementName);
+    data.append('choice2', quizState.choice2);
+    data.append('choice3', quizState.choice3);
+    data.append('conceptTitle', conceptTitle);
+    data.append('pageUrl', window.location.href);
+    data.append('userAgent', navigator.userAgent);
+  
+    fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: data.toString()
     })
     .then(() => {
-        // Với no-cors, không thể đọc response, nhưng request đã được gửi thành công
-        console.log('✅ Dữ liệu đã được gửi đến Google Sheets');
-        console.log('Dữ liệu:', {
-            element: elementName,
-            choice2: quizState.choice2,
-            choice3: quizState.choice3,
-            name: quizState.name,
-            phone: quizState.phone,
-            birthday: quizState.birthday
-        });
+      console.log('✅ Đã gửi dữ liệu sang Google Sheets');
     })
-    .catch((error) => {
-        console.error('❌ Lỗi khi gửi dữ liệu đến Google Sheets:', error);
-        console.log('URL đã thử:', url);
-        // Không hiển thị lỗi cho người dùng để không làm gián đoạn trải nghiệm
+    .catch(err => {
+      console.error('❌ Lỗi gửi Google Sheets:', err);
     });
-}
+  }
+  
 
 function displayConceptSuggestions() {
     const container = document.getElementById('conceptSuggestions');
@@ -721,37 +935,48 @@ function displayConceptSuggestions() {
     
     container.innerHTML = '';
     
-    const elementName = elementNames[quizState.element];
-    const currentStyle = quizState.choice2;
-    const allStyles = step2Questions[quizState.element].options;
+    // Lấy danh sách concept theo ngũ hành đã chọn
+    const conceptsForElement = conceptSuggestionsData[quizState.element];
     
-    // Lọc ra các phong cách khác (loại trừ phong cách hiện tại)
-    const otherStyles = allStyles.filter(style => style !== currentStyle);
-    
-    // Hiển thị tối đa 4 concept gợi ý khác
-    const suggestionsToShow = otherStyles.slice(0, 4);
-    
-    if (suggestionsToShow.length === 0) {
-        container.innerHTML = '<p style="text-align: center; color: var(--neutral-gray); padding: 2rem;">Không có concept gợi ý khác.</p>';
+    if (!conceptsForElement || conceptsForElement.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--neutral-gray); padding: 2rem;">Không có concept gợi ý cho mệnh này.</p>';
         return;
     }
     
-    // Lấy danh sách hình ảnh từ step2
-    const step2Images = elementImages[quizState.element]?.step2 || [];
-    
-    suggestionsToShow.forEach((style, index) => {
-        // Tìm index của style trong allStyles để lấy đúng hình ảnh
-        const styleIndex = allStyles.indexOf(style);
-        const imageSrc = step2Images[styleIndex] || step2Images[0] || elementImages[quizState.element]?.step1 || '';
-        
+    conceptsForElement.forEach((concept, index) => {
         const conceptCard = document.createElement('div');
         conceptCard.className = 'concept-card';
-        conceptCard.innerHTML = `
-            <div class="concept-number">${index + 1}</div>
-            <img class="concept-image" src="${imageSrc}" alt="Concept ${style}" onerror="this.src='${elementImages[quizState.element]?.step1 || ''}'">
-            <h3>${style}</h3>
-            <p>Concept ${elementName} - ${style}</p>
-        `;
+        
+        const numberDiv = document.createElement('div');
+        numberDiv.className = 'concept-number';
+        numberDiv.textContent = index + 1;
+        
+        const titleH3 = document.createElement('h3');
+        titleH3.textContent = concept.title;
+        
+        const imagesContainer = document.createElement('div');
+        imagesContainer.className = 'concept-images-grid';
+        
+        (concept.images || []).forEach((src, imgIndex) => {
+            const img = document.createElement('img');
+            img.className = 'concept-image';
+            img.alt = `Concept ${concept.title} - Ảnh ${imgIndex + 1}`;
+            img.src = src;
+            img.loading = 'lazy';
+            img.style.cssText = 'width: 100%; height: 150px; object-fit: cover; border-radius: 6px; background: #f9f9f9;';
+            
+            // Ẩn ảnh nếu load lỗi
+            img.onerror = function() {
+                this.style.display = 'none';
+            };
+            
+            imagesContainer.appendChild(img);
+        });
+        
+        conceptCard.appendChild(numberDiv);
+        conceptCard.appendChild(titleH3);
+        conceptCard.appendChild(imagesContainer);
+        
         container.appendChild(conceptCard);
     });
 }
