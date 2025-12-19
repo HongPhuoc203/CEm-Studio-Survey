@@ -76,51 +76,51 @@ const step3Questions = {
         "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Ánh sáng tự nhiên, dịu nhẹ",
-                "Studio lighting tinh tế",
-                "High-key, sáng rõ",
-                "Low-key, tạo bóng đổ",
-                "Ánh sáng vàng ấm"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Suit, blazer chỉn chu",
-                "Áo sơ mi và quần tây",
-                "Vest và áo dài tay",
-                "Trang phục công sở hiện đại",
-                "Mix & match thanh lịch"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Smoky eyes và môi đỏ",
-                "Make up ánh kim nổi bật",
-                "Glamour classic",
-                "Bold và dramatic",
-                "Sang trọng, quý phái"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Trầm tư, sâu sắc",
-                "Tự tin, quyền lực",
-                "Dịu dàng, thanh lịch",
-                "Nghệ thuật, độc đáo",
-                "Cổ điển, vượt thời gian"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Chân dung cận cảnh",
-                "Pose nghệ thuật, độc đáo",
-                "Tự nhiên, không gò bó",
-                "Tạo hình mạnh mẽ",
-                "Biểu cảm đa dạng"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         }
     },
@@ -128,51 +128,51 @@ const step3Questions = {
         "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Ánh sáng tự nhiên buổi sáng",
-                "Golden hour",
-                "Ánh sáng xuyên qua lá",
-                "Ánh sáng dịu nhẹ",
-                "Ánh sáng tự nhiên đầy đủ"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Váy flowy, tự nhiên",
-                "Áo trắng đơn giản",
-                "Trang phục earth tone",
-                "Vải mềm mại, thoải mái",
-                "Mix tự nhiên và hiện đại"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Thư giãn, thoải mái",
-                "Ấm áp, thân thiện",
-                "Tự nhiên, không gò bó",
-                "Gần gũi, chân thật",
-                "Vui vẻ, tích cực"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Natural, không make up",
-                "Make up nhẹ nhàng",
-                "Tươi tắn, tự nhiên",
-                "Glowing, healthy skin",
-                "Minimal, fresh"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Tự nhiên, không gò bó",
-                "Pose cổ điển",
-                "Chuyển động nhẹ nhàng",
-                "Ngồi, đứng tự nhiên",
-                "Tương tác với không gian"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         }
     },
@@ -180,51 +180,51 @@ const step3Questions = {
         "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Pastel nhẹ nhàng",
-                "Xanh dương, xanh lá nhạt",
-                "Trắng và xanh biển",
-                "Tone lạnh, dịu mát",
-                "Màu nước trong suốt"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Ánh sáng dịu, low-key",
-                "Ánh sáng xanh lạnh",
-                "Bóng đổ sâu",
-                "Ánh sáng tự nhiên mờ",
-                "Studio lighting mềm mại"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Váy mềm mại, flowy",
-                "Áo trắng nhẹ nhàng",
-                "Trang phục tone pastel",
-                "Vải lụa, mềm mại",
-                "Trang phục đơn giản, tinh tế"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Natural, dewy skin",
-                "Make up mềm mại",
-                "Glossy lips",
-                "Smoky eyes nhẹ",
-                "Make up nghệ thuật"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Pose mềm mại, uyển chuyển",
-                "Chuyển động nhẹ nhàng",
-                "Ngồi, nằm tự nhiên",
-                "Tương tác với nước",
-                "Biểu cảm dịu dàng"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         }
     },
@@ -232,51 +232,51 @@ const step3Questions = {
         "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Đỏ, cam rực rỡ",
-                "Vàng, vàng cam",
-                "Tone ấm, nóng",
-                "Đỏ đậm, quyến rũ",
-                "Màu sắc sống động"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Ánh sáng vàng ấm",
-                "Studio lighting dramatic",
-                "Low-key với điểm sáng",
-                "Ánh sáng neon",
-                "Ánh sáng tạo chiều sâu"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Trang phục màu sắc",
-                "Streetwear năng động",
-                "Váy ngắn, trẻ trung",
-                "Mix & match cá tính",
-                "Trang phục thể thao"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Bold lips đỏ",
-                "Smoky eyes dramatic",
-                "Make up nổi bật",
-                "Glamour, quyến rũ",
-                "Make up cá tính"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Pose năng động",
-                "Nhảy, chuyển động",
-                "Biểu cảm vui vẻ",
-                "Tự nhiên, không gò bó",
-                "Tương tác với camera"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         }
     },
@@ -284,51 +284,51 @@ const step3Questions = {
         "Lấp lánh & Sang trọng: Trắng, Bạc, Vàng Gold, Metallic.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Tone ấm, beige, nâu",
-                "Vàng nhạt, kem",
-                "Đất nung, terracotta",
-                "Tone trung tính ấm",
-                "Màu tự nhiên, earth tone"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Tươi mát & Trong trẻo: Xanh lá, Xanh pastel, màu của cây cỏ.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Ánh sáng vàng ấm",
-                "Ánh sáng tự nhiên đầy đủ",
-                "Studio lighting mềm",
-                "High-key, sáng rõ",
-                "Ánh sáng dịu nhẹ"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Huyền bí & Sâu lắng: Xanh biển đậm, Đen, Tím than, màu loang của nước.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Trang phục tự nhiên",
-                "Áo len, ấm áp",
-                "Earth tone, neutral",
-                "Trang phục thoải mái",
-                "Mix tự nhiên và hiện đại"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Rực rỡ & Nổi bật: Đỏ rực, Cam, Hồng, màu của lễ hội.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Natural, healthy glow",
-                "Make up nhẹ nhàng",
-                "Classic, timeless",
-                "Warm tones",
-                "Minimal, fresh"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         },
         "Ấm áp & Hoài niệm: Nâu đất, Be, Cam gạch, màu Vintage.": {
             question: "Trong bộ ảnh mở màn năm mới này, bạn muốn mọi người nhìn thấy một phiên bản như thế nào của chính mình?",
             options: [
-                "Tự nhiên, thoải mái",
-                "Ngồi, đứng ổn định",
-                "Pose cổ điển",
-                "Tương tác với không gian",
-                "Biểu cảm ấm áp"
+                "Nữ Hoàng Quyền Lực: Thần thái sắc sảo, sang chảnh, hiện đại và tỏa sáng",
+                "Nàng Thơ Mộng Mơ: Nhẹ nhàng, nữ tính, tràn đầy sức sống và sự tươi mới.",
+                "Quý Cô Bí Ẩn: Nội tâm, có chiều sâu, ma mị và đầy quyến rũ.",
+                "Tâm Điểm Của Bữa Tiệc: Vui vẻ, tràn đầy năng lượng, nhiệt huyết và đam mê.",
+                "Người Phụ Nữ An Yên: Điềm đạm, mộc mạc, vững chãi và sâu sắc."
             ]
         }
     }
@@ -909,8 +909,7 @@ function saveToGoogleSheets() {
     data.append('choice2', quizState.choice2);
     data.append('choice3', quizState.choice3);
     data.append('conceptTitle', conceptTitle);
-    data.append('pageUrl', window.location.href);
-    data.append('userAgent', navigator.userAgent);
+    
   
     fetch(GOOGLE_SHEETS_WEB_APP_URL, {
       method: 'POST',
@@ -992,13 +991,18 @@ function showResult() {
     // For now, use default template (user will replace with 125 actual results)
     const result = resultTemplates[resultKey] || resultTemplates.default;
     
-    // Update result page
-    const personaText = quizState.choice2 || "Phong cách bạn chọn";
-    const moodText = quizState.choice3 || "Tông cảm xúc bạn chọn";
-    const introMessage = `Xin chào nàng thơ mệnh ${elementName}, đây là concept gợi ý cho bạn theo phong cách ${personaText}: ${moodText}`;
-    
-    const conceptTitle = `Concept: ${personaText}`;
-    document.getElementById('resultTitle').textContent = conceptTitle;
+    // Update result page (ngắn gọn, chỉ lấy phần tên trước dấu ':')
+    // persona: lựa chọn bước 3 (ví dụ: "Nữ Hoàng Quyền Lực: ...")
+    // mood   : lựa chọn bước 2 (ví dụ: "Tươi mát & Trong trẻo: ...")
+    const rawPersona = (quizState.choice3 || "").trim();
+    const rawMood    = (quizState.choice2 || "").trim();
+
+    const personaLabel = rawPersona.split(':')[0].trim();
+    const moodLabel    = rawMood.split(':')[0].trim();
+
+    const introMessage = `Xin chào nàng thơ mệnh ${elementName}, đây là concept gợi ý cho bạn theo phong cách ${personaLabel}${moodLabel ? `: ${moodLabel}` : ""}`;
+
+    document.getElementById('resultTitle').textContent = "";
     document.getElementById('resultDescription').textContent = introMessage;
     
     // Hiển thị các concept gợi ý khác

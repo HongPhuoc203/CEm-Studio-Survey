@@ -508,7 +508,7 @@ body {
 
 .result-description {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.9rem;
     color: var(--neutral-gray);
     margin-bottom: 3rem;
     line-height: 1.8;
@@ -568,7 +568,8 @@ body {
     text-align: left;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    /* Để ảnh không bị cắt trên/dưới khi cao hơn padding */
+    overflow: visible;
     width: 100%;
 }
 
@@ -579,9 +580,9 @@ body {
 }
 
 .concept-image {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
+    width: auto;
+    max-height: 220px;
+    object-fit: contain;
     display: block;
     background: #f9f9f9;
 }
@@ -663,7 +664,7 @@ body {
 .result-gallery-grid img {
     width: 100%;
     aspect-ratio: 3 / 4;
-    max-height: 220px;
+    max-height: 370px;
     object-fit: cover;
     background: #f9f9f9;
     border-radius: 14px;
