@@ -724,6 +724,8 @@ function startQuiz() {
     // reset error message
     const err = document.getElementById('preError');
     if (err) err.classList.add('hidden');
+    // Scroll lên đầu trang
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function backToLanding() {
@@ -751,6 +753,9 @@ function submitPreSurvey() {
     // move to birthday step
     document.getElementById('preSurvey').classList.add('hidden');
     document.getElementById('birthdaySurvey').classList.remove('hidden');
+    
+    // Scroll lên đầu trang khi chuyển step
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function backToPreSurvey() {
@@ -773,6 +778,9 @@ function submitBirthday() {
     document.getElementById('birthdaySurvey').classList.add('hidden');
     document.getElementById('quiz').classList.remove('hidden');
     updateProgress(1);
+    
+    // Scroll lên đầu trang khi chuyển sang quiz
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function selectElement(element) {
@@ -812,6 +820,9 @@ function selectElement(element) {
     renderGallery('step2Gallery', question2Images, element);
     
     updateProgress(2);
+    
+    // Scroll lên đầu trang khi chuyển step
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function selectChoice2(choice) {
@@ -854,6 +865,9 @@ function selectChoice2(choice) {
     renderGallery('step3Gallery', elementImages[quizState.element].step3, quizState.element);
     
     updateProgress(3);
+    
+    // Scroll lên đầu trang khi chuyển step
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function selectChoice3(choice) {
@@ -874,12 +888,16 @@ function goBack(step) {
         document.getElementById('step1').classList.remove('hidden');
         quizState.choice2 = null;
         updateProgress(1);
+        // Scroll lên đầu trang khi quay lại
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (step === 2) {
         // Go back to step 2
         document.getElementById('step3').classList.add('hidden');
         document.getElementById('step2').classList.remove('hidden');
         quizState.choice3 = null;
         updateProgress(2);
+        // Scroll lên đầu trang khi quay lại
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
@@ -962,7 +980,12 @@ function displayConceptSuggestions() {
             img.alt = `Concept ${concept.title} - Ảnh ${imgIndex + 1}`;
             img.src = src;
             img.loading = 'lazy';
-            img.style.cssText = 'width: 100%; height: 150px; object-fit: cover; border-radius: 6px; background: #f9f9f9;';
+            img.style.cssText = 'width: 100%; height: 150px; object-fit: cover; border-radius: 6px; background: #f9f9f9; cursor: pointer;';
+            
+            // Thêm click event để mở lightbox
+            img.addEventListener('click', function() {
+                openImageLightbox(src, `${concept.title} - Ảnh ${imgIndex + 1}`);
+            });
             
             // Ẩn ảnh nếu load lỗi
             img.onerror = function() {
@@ -1023,6 +1046,8 @@ function showResult() {
     setTimeout(() => {
         showVoucherModal();
     }, 500);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function saveResult() {
@@ -1117,6 +1142,30 @@ function claimVoucher() {
     closeVoucherModal();
 }
 
+// Image Lightbox Functions
+function openImageLightbox(imageSrc, caption) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    
+    if (lightbox && lightboxImage) {
+        lightboxImage.src = imageSrc;
+        lightboxCaption.textContent = caption || '';
+        lightbox.classList.remove('hidden');
+        // Ngăn scroll body khi lightbox mở
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeImageLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    if (lightbox) {
+        lightbox.classList.add('hidden');
+        // Khôi phục scroll body
+        document.body.style.overflow = '';
+    }
+}
+
 // Close modal when clicking outside
 window.onclick = function(event) {
     const modal = document.getElementById('contactModal');
@@ -1128,5 +1177,20 @@ window.onclick = function(event) {
     if (event.target === voucherModal) {
         closeVoucherModal();
     }
+    
+    const imageLightbox = document.getElementById('imageLightbox');
+    if (event.target === imageLightbox) {
+        closeImageLightbox();
+    }
 }
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const lightbox = document.getElementById('imageLightbox');
+        if (lightbox && !lightbox.classList.contains('hidden')) {
+            closeImageLightbox();
+        }
+    }
+});
 
