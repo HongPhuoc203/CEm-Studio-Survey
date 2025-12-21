@@ -1003,7 +1003,7 @@ function showResult() {
     const introMessage = `Xin chào nàng thơ mệnh ${elementName}, đây là concept gợi ý cho bạn theo phong cách ${personaLabel}${moodLabel ? `: ${moodLabel}` : ""}`;
 
     document.getElementById('resultTitle').textContent = "";
-    document.getElementById('resultDescription').textContent = introMessage;
+   // document.getElementById('resultDescription').textContent = introMessage;
     
     // Hiển thị các concept gợi ý khác
     displayConceptSuggestions();
