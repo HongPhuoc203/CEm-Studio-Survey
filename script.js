@@ -1056,7 +1056,7 @@ Cem Studio - Kết quả khảo sát
 
 Concept: ${document.getElementById('resultTitle').textContent}
 
-${document.getElementById('resultDescription').textContent}
+${document.getElementById('resultDescription')?.textContent || ''}
 
 Thông tin khảo sát:
 - Element: ${elementNames[quizState.element]}
@@ -1066,18 +1066,90 @@ Thông tin khảo sát:
 Bạn có thể chụp màn hình để lưu lại kết quả này.
     `;
     
-    // Create a blob and download
-    const blob = new Blob([resultText], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'ket-qua-khao-sat.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    // Kiểm tra xem có phải thiết bị di động không
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                     (window.innerWidth <= 768);
     
-    alert('Kết quả đã được lưu! Bạn cũng có thể chụp màn hình để lưu lại.');
+    if (isMobile) {
+        // Trên mobile: Copy vào clipboard và hiển thị thông báo
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(resultText).then(() => {
+                alert('✅ Kết quả đã được sao chép vào clipboard!\n\nBạn có thể dán vào ứng dụng ghi chú hoặc chụp màn hình để lưu lại.');
+            }).catch(() => {
+                // Fallback: Hiển thị text trong modal
+                showResultTextModal(resultText);
+            });
+        } else {
+            // Fallback: Hiển thị text trong modal để người dùng có thể copy thủ công
+            showResultTextModal(resultText);
+        }
+    } else {
+        // Trên desktop: Tải file như bình thường
+        const blob = new Blob([resultText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ket-qua-khao-sat.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        
+        alert('✅ Kết quả đã được lưu! Bạn cũng có thể chụp màn hình để lưu lại.');
+    }
+}
+
+// Hiển thị modal với text để người dùng có thể copy trên mobile
+function showResultTextModal(text) {
+    // Tạo modal nếu chưa có
+    let modal = document.getElementById('resultTextModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'resultTextModal';
+        modal.className = 'modal hidden';
+        modal.innerHTML = `
+            <div class="modal-content" style="max-width: 90%; max-height: 80vh; overflow-y: auto;">
+                <span class="close-modal" onclick="closeResultTextModal()">&times;</span>
+                <h2>Kết quả khảo sát</h2>
+                <textarea id="resultTextArea" readonly style="width: 100%; min-height: 300px; padding: 1rem; border: 2px solid #e0e0e0; border-radius: 8px; font-family: inherit; font-size: 0.95rem; line-height: 1.6; resize: vertical;"></textarea>
+                <button class="cta-button" onclick="copyResultText()" style="margin-top: 1rem; width: 100%;">Sao chép nội dung</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--neutral-gray); font-size: 0.9rem;">Hoặc chụp màn hình để lưu lại</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    
+    // Điền text vào textarea
+    const textarea = document.getElementById('resultTextArea');
+    if (textarea) {
+        textarea.value = text;
+    }
+    
+    // Hiển thị modal
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeResultTextModal() {
+    const modal = document.getElementById('resultTextModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+}
+
+function copyResultText() {
+    const textarea = document.getElementById('resultTextArea');
+    if (textarea) {
+        textarea.select();
+        textarea.setSelectionRange(0, 99999); // Cho mobile
+        try {
+            document.execCommand('copy');
+            alert('✅ Đã sao chép vào clipboard!');
+        } catch (err) {
+            alert('❌ Không thể sao chép tự động. Vui lòng chọn và copy thủ công.');
+        }
+    }
 }
 
 function bookSession() {
